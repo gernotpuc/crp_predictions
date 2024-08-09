@@ -62,4 +62,3 @@ Encounter/dsadasf34f,2021-09-27 12:30:00+00
 
 ### Requirements:<br>
 Please use requirements.txt file for installing required packages.<br>
-pip install -r requirements.txt
