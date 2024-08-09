@@ -11,7 +11,7 @@ Internationally, and also in Germany, the prevalence of multi-resistant pathogen
 In addition to vital parameters, inflammation levels, especially C-reactive protein (CrP), are the most important clinical parameters for sepsis. However, the response of CRP levels to antibiotic treatment is delayed due to a half-life of 19 hours. Thus, despite overall clinical improvement, an increase in CrP is often still detected, which can lead to an (unnecessary) intensification of antibiotic therapy. The reliable prediction of CrP can therefore contribute to a more restrictive antibiotic therapy. 
 
 Using the FHIR data set with a cohort of 398 patients at the University Hospital Essen, various monocentric, global time series models were trained, which predict patient-specific CrP values.
-Models were intentionally kept simple in order to keep the data requirements as low as possible. Thus, no covariates were used here and predictions are made only based on the historic CrP values and time stamps of administered AB medications.
+Models were intentionally kept simple in order to keep the data requirements as low as possible. Thus, no covariates were used here and predictions are made only based on the historic CrP values and time stamps of administered antibiotics.
 
 On an internal validation dataset with 398 time series, the following performances could be achieved for the next day CrP-prediction after start of antibiotic therapy in a 5-fold cross validation with 20 repeats:
 
