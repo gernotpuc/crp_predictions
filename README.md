@@ -55,3 +55,7 @@ The file for the **antibiotics administered** must contain the timestamps of ant
 **encounter_id,recorded_time**<br>
 Encounter/dsadasf34f,2021-09-27 06:00:00+00<br>
 Encounter/dsadasf34f,2021-09-27 12:30:00+00
+
+### Requirements:<br>
+Please use requirements.txt file for installing required packages.<br>
+pip install -r requirements.txt
