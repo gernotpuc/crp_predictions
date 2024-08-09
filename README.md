@@ -1,5 +1,6 @@
 # CRP prediction models
-Trained models for performing next-day CRP predictions after start of antibiotic therapy
+Pretrained models for performing next-day CRP predictions after start of antibiotic therapy.
+In the Notebook 'crp_forecasts', pretrained models can be loaded and used for performing predictions on a specified dataset of patient specific CrP values.
 
 ## Introduction
 Internationally, and also in Germany, the prevalence of multi-resistant pathogens, which do not respond to antibiotics or only respond to them to a limited extent, is increasing. The main cause is the incorrect prescription and application of antibiotics, in particular the unnecessary and excessively long treatment with broad-spectrum antibiotics. 
@@ -18,7 +19,7 @@ On an internal validation dataset with 398 time series, the following performanc
 | Weighted Ensemble of NNs (DeepAR, TiDE, PatchTST, DLinear, TFTM)  | 3.67 | 5.13 | 26.39 | 36.64 |
 | Zero-shot Large Language Model (Chronos)                          |      |      |       |       |
 
-In the Notebook 'crp_forecasts', pretrained models can be loaded and used for performing predictions on a specified dataset of patient specific CrP values.
+
 
 ### Cohort definition:<br>  
 
