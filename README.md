@@ -3,6 +3,8 @@ Pretrained models for performing next-day CRP predictions after start of antibio
 
 The Notebook **crp_forecast** can be used for performing predictions on a specified dataset of patient specific CrP values.
 
+To use the notebook with you own data, please read the section *Data requirements* carefully.
+
 ## Introduction
 Internationally, and also in Germany, the prevalence of multi-resistant pathogens, which do not respond to antibiotics or only respond to them to a limited extent, is increasing. The main cause is the incorrect prescription and application of antibiotics, in particular the unnecessary and excessively long treatment with broad-spectrum antibiotics. 
 
