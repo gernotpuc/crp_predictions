@@ -22,6 +22,7 @@ On an internal validation dataset with 398 time series, the following performanc
 | Weighted Ensemble of NNs (DeepAR, TiDE, PatchTST, DLinear, TFTM)  | 3.67 | 5.13 | 26.39 | 36.64 |
 | Zero-shot Large Language Model (Chronos)                          | 3.96 | 5.65 | 32.01 | 39.13 |
 | Baseline model: Average Forecast                                  | 7.70 | 10.72| 98.53 | 60.69 |
+| Baseline model: Naive Forecast                                    | 4.82 | 7.18 | 26.88 | 42.47 |
 
 
 ### Cohort definition:<br>  
