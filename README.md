@@ -20,8 +20,8 @@ On an internal validation dataset with 398 time series, the following performanc
 | Gradient Boosting (LightGBM)                                      | 3.35 | 4.73 | 22.40 | 35.59 |
 | Neural Network (NBEATS)                                           | 3.30 | 4.80 | 23.06 | 30.58 |
 | Weighted Ensemble of NNs (DeepAR, TiDE, PatchTST, DLinear, TFTM)  | 3.67 | 5.13 | 26.39 | 36.64 |
-| Zero-shot Large Language Model (Chronos)                          |      |      |       |       |
-
+| Zero-shot Large Language Model (Chronos)                          | 3.96 | 5.65 | 32.01 | 39.13 |
+| Baseline model: Average Forecast                                  | 7.70 | 10.72| 98.53 | 60.69 |
 
 
 ### Cohort definition:<br>  
