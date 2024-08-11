@@ -1,0 +1,16 @@
+autogluon==1.1.1
+chronos==1.2.0
+darts==0.30.0
+import_ipynb==0.1.4
+lightgbm==4.5.0
+matplotlib==3.7.5
+mlxtend==0.23.1
+numpy==1.24.4
+numpy==1.24.2
+PyYAML==6.0.2
+scikit_learn==1.3.2
+scikit_optimize==0.10.2
+scipy==1.9.1
+tabpfn==0.1.10
+torch==2.3.1
+xgboost==2.1.1
