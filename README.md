@@ -1,7 +1,7 @@
 # Pretrained CrP prediction models
 Pretrained models for performing next-day CRP predictions after start of antibiotic therapy.
 
-The Notebook **crp_forecast** can be used for performing predictions on a specified dataset of patient specific CrP values.
+The Notebook **crp_forecasts** can be used for performing predictions on a specified dataset of patient specific CrP values.
 
 To use the notebook with you own data, please read the section on **Data requirements** carefully.
 
