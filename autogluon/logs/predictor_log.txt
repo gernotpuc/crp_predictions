@@ -1,0 +1,546 @@
+Beginning AutoGluon training... Time limit = 600s
+AutoGluon will save models to 'autogluon'
+=================== System Info ===================
+AutoGluon Version:  1.1.1
+Python Version:     3.8.10
+Operating System:   Linux
+Platform Machine:   x86_64
+Platform Version:   #202309061752 SMP Wed Sep 6 22:35:16 UTC 2023
+CPU Count:          128
+GPU Count:          1
+Memory Avail:       964.74 GB / 1007.33 GB (95.8%)
+Disk Space Avail:   13.01 GB / 29.36 GB (44.3%)
+===================================================
+Setting presets to: best_quality
+
+Fitting with arguments:
+{'enable_ensemble': True,
+ 'eval_metric': MAE,
+ 'freq': 'D',
+ 'hyperparameters': {'DLinearModel': {},
+                     'DeepAR': {},
+                     'PatchTSTModel': {},
+                     'TemporalFusionTransformerModel': {},
+                     'TiDE': {}},
+ 'known_covariates_names': [],
+ 'num_val_windows': 2,
+ 'prediction_length': 1,
+ 'quantile_levels': [0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 0.95],
+ 'random_seed': 123,
+ 'refit_every_n_windows': 1,
+ 'refit_full': False,
+ 'skip_model_selection': False,
+ 'target': 'crp',
+ 'time_limit': 600,
+ 'verbosity': 3}
+
+Provided train_data has 2151 rows, 398 time series. Median time series length is 6 (min=4, max=6). 
+Time series in train_data are too short for chosen num_val_windows=2. Reducing num_val_windows to 1.
+	Removing 146 short time series from train_data. Only series with length >= 6 will be used for training.
+	After filtering, train_data has 1512 rows, 252 time series. Median time series length is 6 (min=6, max=6). 
+
+Provided data contains following columns:
+	target: 'crp'
+
+AutoGluon will gauge predictive performance using evaluation metric: 'MAE'
+	This metric's sign has been flipped to adhere to being higher_is_better. The metric score can be multiplied by -1 to get the metric value.
+===================================================
+
+Starting training. Start time is 2024-08-09 11:43:52
+Models that will be trained: ['TemporalFusionTransformer', 'DeepAR', 'TiDE', 'PatchTST', 'DLinear']
+Training timeseries model TemporalFusionTransformer. Training for up to 100.0s of the 599.9s of remaining time.
+	-4.2614       = Validation score (-MAE)
+	86.31   s     = Training runtime
+	0.22    s     = Validation (prediction) runtime
+Training timeseries model DeepAR. Training for up to 102.6s of the 513.2s of remaining time.
+	-4.7400       = Validation score (-MAE)
+	48.81   s     = Training runtime
+	0.15    s     = Validation (prediction) runtime
+Training timeseries model TiDE. Training for up to 116.0s of the 464.2s of remaining time.
+	-4.2762       = Validation score (-MAE)
+	64.62   s     = Training runtime
+	0.33    s     = Validation (prediction) runtime
+Training timeseries model PatchTST. Training for up to 133.0s of the 399.1s of remaining time.
+	-4.0006       = Validation score (-MAE)
+	32.52   s     = Training runtime
+	0.16    s     = Validation (prediction) runtime
+Training timeseries model DLinear. Training for up to 183.2s of the 366.4s of remaining time.
+	-4.2573       = Validation score (-MAE)
+	25.15   s     = Training runtime
+	0.16    s     = Validation (prediction) runtime
+Fitting simple weighted ensemble.
+	Ensemble weights: {'DLinear': 0.23, 'PatchTST': 0.57, 'TemporalFusionTransformer': 0.02, 'TiDE': 0.17}
+	-3.8421       = Validation score (-MAE)
+	0.60    s     = Training runtime
+	0.87    s     = Validation (prediction) runtime
+Training complete. Models trained: ['TemporalFusionTransformer', 'DeepAR', 'TiDE', 'PatchTST', 'DLinear', 'WeightedEnsemble']
+Total runtime: 259.60 s
+Best model: WeightedEnsemble
+Best model score: -3.8421
+Model not specified in predict, will default to the model with the best validation score: WeightedEnsemble
+Beginning AutoGluon training... Time limit = 600s
+AutoGluon will save models to 'autogluon'
+=================== System Info ===================
+AutoGluon Version:  1.1.1
+Python Version:     3.8.10
+Operating System:   Linux
+Platform Machine:   x86_64
+Platform Version:   #202309061752 SMP Wed Sep 6 22:35:16 UTC 2023
+CPU Count:          128
+GPU Count:          1
+Memory Avail:       986.49 GB / 1007.33 GB (97.9%)
+Disk Space Avail:   13.16 GB / 29.36 GB (44.8%)
+===================================================
+Setting presets to: best_quality
+
+Fitting with arguments:
+{'enable_ensemble': True,
+ 'eval_metric': MAE,
+ 'freq': 'D',
+ 'hyperparameters': {'AverageModel': {}},
+ 'known_covariates_names': [],
+ 'num_val_windows': 2,
+ 'prediction_length': 1,
+ 'quantile_levels': [0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 0.95],
+ 'random_seed': 123,
+ 'refit_every_n_windows': 1,
+ 'refit_full': False,
+ 'skip_model_selection': False,
+ 'target': 'crp',
+ 'time_limit': 600,
+ 'verbosity': 3}
+
+Provided train_data has 2151 rows, 398 time series. Median time series length is 6 (min=4, max=6). 
+Time series in train_data are too short for chosen num_val_windows=2. Reducing num_val_windows to 1.
+	Removing 146 short time series from train_data. Only series with length >= 6 will be used for training.
+	After filtering, train_data has 1512 rows, 252 time series. Median time series length is 6 (min=6, max=6). 
+
+Provided data contains following columns:
+	target: 'crp'
+
+AutoGluon will gauge predictive performance using evaluation metric: 'MAE'
+	This metric's sign has been flipped to adhere to being higher_is_better. The metric score can be multiplied by -1 to get the metric value.
+===================================================
+
+Starting training. Start time is 2024-08-10 20:28:16
+Models that will be trained: ['Average']
+Training timeseries model Average. Training for up to 599.8s of the 599.8s of remaining time.
+	-8.4056       = Validation score (-MAE)
+	0.02    s     = Training runtime
+	2.52    s     = Validation (prediction) runtime
+Not fitting ensemble as only 1 model was trained.
+Training complete. Models trained: ['Average']
+Total runtime: 2.67 s
+Best model: Average
+Best model score: -8.4056
+Warning: path already exists! This predictor may overwrite an existing predictor! path="autogluon"
+Beginning AutoGluon training... Time limit = 600s
+Beginning AutoGluon training... Time limit = 600s
+AutoGluon will save models to 'autogluon'
+AutoGluon will save models to 'autogluon'
+=================== System Info ===================
+AutoGluon Version:  1.1.1
+Python Version:     3.8.10
+Operating System:   Linux
+Platform Machine:   x86_64
+Platform Version:   #202309061752 SMP Wed Sep 6 22:35:16 UTC 2023
+CPU Count:          128
+GPU Count:          1
+Memory Avail:       980.33 GB / 1007.33 GB (97.3%)
+Disk Space Avail:   13.16 GB / 29.36 GB (44.8%)
+===================================================
+=================== System Info ===================
+AutoGluon Version:  1.1.1
+Python Version:     3.8.10
+Operating System:   Linux
+Platform Machine:   x86_64
+Platform Version:   #202309061752 SMP Wed Sep 6 22:35:16 UTC 2023
+CPU Count:          128
+GPU Count:          1
+Memory Avail:       980.33 GB / 1007.33 GB (97.3%)
+Disk Space Avail:   13.16 GB / 29.36 GB (44.8%)
+===================================================
+Setting presets to: best_quality
+Setting presets to: best_quality
+
+Fitting with arguments:
+
+Fitting with arguments:
+{'enable_ensemble': True,
+ 'eval_metric': MAE,
+ 'freq': 'D',
+ 'hyperparameters': {'AverageModel': {}},
+ 'known_covariates_names': [],
+ 'num_val_windows': 2,
+ 'prediction_length': 1,
+ 'quantile_levels': [0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 0.95],
+ 'random_seed': 123,
+ 'refit_every_n_windows': 1,
+ 'refit_full': False,
+ 'skip_model_selection': False,
+ 'target': 'crp',
+ 'time_limit': 600,
+ 'verbosity': 3}
+
+{'enable_ensemble': True,
+ 'eval_metric': MAE,
+ 'freq': 'D',
+ 'hyperparameters': {'AverageModel': {}},
+ 'known_covariates_names': [],
+ 'num_val_windows': 2,
+ 'prediction_length': 1,
+ 'quantile_levels': [0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 0.95],
+ 'random_seed': 123,
+ 'refit_every_n_windows': 1,
+ 'refit_full': False,
+ 'skip_model_selection': False,
+ 'target': 'crp',
+ 'time_limit': 600,
+ 'verbosity': 3}
+
+Provided train_data has 2151 rows, 398 time series. Median time series length is 6 (min=4, max=6). 
+Provided train_data has 2151 rows, 398 time series. Median time series length is 6 (min=4, max=6). 
+Time series in train_data are too short for chosen num_val_windows=2. Reducing num_val_windows to 1.
+Time series in train_data are too short for chosen num_val_windows=2. Reducing num_val_windows to 1.
+	Removing 146 short time series from train_data. Only series with length >= 6 will be used for training.
+	Removing 146 short time series from train_data. Only series with length >= 6 will be used for training.
+	After filtering, train_data has 1512 rows, 252 time series. Median time series length is 6 (min=6, max=6). 
+	After filtering, train_data has 1512 rows, 252 time series. Median time series length is 6 (min=6, max=6). 
+
+Provided data contains following columns:
+
+Provided data contains following columns:
+	target: 'crp'
+	target: 'crp'
+
+AutoGluon will gauge predictive performance using evaluation metric: 'MAE'
+
+AutoGluon will gauge predictive performance using evaluation metric: 'MAE'
+	This metric's sign has been flipped to adhere to being higher_is_better. The metric score can be multiplied by -1 to get the metric value.
+	This metric's sign has been flipped to adhere to being higher_is_better. The metric score can be multiplied by -1 to get the metric value.
+===================================================
+===================================================
+
+Starting training. Start time is 2024-08-10 20:29:44
+
+Starting training. Start time is 2024-08-10 20:29:44
+Models that will be trained: ['Average']
+Models that will be trained: ['Average']
+Training timeseries model Average. Training for up to 599.8s of the 599.8s of remaining time.
+Training timeseries model Average. Training for up to 599.8s of the 599.8s of remaining time.
+	-8.4056       = Validation score (-MAE)
+	-8.4056       = Validation score (-MAE)
+	0.03    s     = Training runtime
+	0.03    s     = Training runtime
+	0.30    s     = Validation (prediction) runtime
+	0.30    s     = Validation (prediction) runtime
+Not fitting ensemble as only 1 model was trained.
+Not fitting ensemble as only 1 model was trained.
+Training complete. Models trained: ['Average']
+Training complete. Models trained: ['Average']
+Total runtime: 0.45 s
+Total runtime: 0.45 s
+Best model: Average
+Best model: Average
+Best model score: -8.4056
+Best model score: -8.4056
+Beginning AutoGluon training... Time limit = 600s
+AutoGluon will save models to 'autogluon'
+=================== System Info ===================
+AutoGluon Version:  1.1.1
+Python Version:     3.8.10
+Operating System:   Linux
+Platform Machine:   x86_64
+Platform Version:   #202309061752 SMP Wed Sep 6 22:35:16 UTC 2023
+CPU Count:          128
+GPU Count:          1
+Memory Avail:       979.73 GB / 1007.33 GB (97.3%)
+Disk Space Avail:   13.16 GB / 29.36 GB (44.8%)
+===================================================
+Setting presets to: best_quality
+
+Fitting with arguments:
+{'enable_ensemble': True,
+ 'eval_metric': MAE,
+ 'freq': 'D',
+ 'hyperparameters': {'AverageModel': {}},
+ 'known_covariates_names': [],
+ 'num_val_windows': 2,
+ 'prediction_length': 1,
+ 'quantile_levels': [0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 0.95],
+ 'random_seed': 123,
+ 'refit_every_n_windows': 1,
+ 'refit_full': False,
+ 'skip_model_selection': False,
+ 'target': 'crp',
+ 'time_limit': 600,
+ 'verbosity': 3}
+
+Provided train_data has 2151 rows, 398 time series. Median time series length is 6 (min=4, max=6). 
+Time series in train_data are too short for chosen num_val_windows=2. Reducing num_val_windows to 1.
+	Removing 146 short time series from train_data. Only series with length >= 6 will be used for training.
+	After filtering, train_data has 1512 rows, 252 time series. Median time series length is 6 (min=6, max=6). 
+
+Provided data contains following columns:
+	target: 'crp'
+
+AutoGluon will gauge predictive performance using evaluation metric: 'MAE'
+	This metric's sign has been flipped to adhere to being higher_is_better. The metric score can be multiplied by -1 to get the metric value.
+===================================================
+
+Starting training. Start time is 2024-08-10 20:31:44
+Models that will be trained: ['Average']
+Training timeseries model Average. Training for up to 599.8s of the 599.8s of remaining time.
+	-8.4056       = Validation score (-MAE)
+	0.02    s     = Training runtime
+	2.85    s     = Validation (prediction) runtime
+Not fitting ensemble as only 1 model was trained.
+Training complete. Models trained: ['Average']
+Total runtime: 2.99 s
+Best model: Average
+Best model score: -8.4056
+Warning: path already exists! This predictor may overwrite an existing predictor! path="autogluon"
+Beginning AutoGluon training... Time limit = 600s
+Beginning AutoGluon training... Time limit = 600s
+AutoGluon will save models to 'autogluon'
+AutoGluon will save models to 'autogluon'
+=================== System Info ===================
+AutoGluon Version:  1.1.1
+Python Version:     3.8.10
+Operating System:   Linux
+Platform Machine:   x86_64
+Platform Version:   #202309061752 SMP Wed Sep 6 22:35:16 UTC 2023
+CPU Count:          128
+GPU Count:          1
+Memory Avail:       984.89 GB / 1007.33 GB (97.8%)
+Disk Space Avail:   13.16 GB / 29.36 GB (44.8%)
+===================================================
+=================== System Info ===================
+AutoGluon Version:  1.1.1
+Python Version:     3.8.10
+Operating System:   Linux
+Platform Machine:   x86_64
+Platform Version:   #202309061752 SMP Wed Sep 6 22:35:16 UTC 2023
+CPU Count:          128
+GPU Count:          1
+Memory Avail:       984.89 GB / 1007.33 GB (97.8%)
+Disk Space Avail:   13.16 GB / 29.36 GB (44.8%)
+===================================================
+Setting presets to: best_quality
+Setting presets to: best_quality
+
+Fitting with arguments:
+
+Fitting with arguments:
+{'enable_ensemble': True,
+ 'eval_metric': MAE,
+ 'freq': 'D',
+ 'hyperparameters': {'AverageModel': {}},
+ 'known_covariates_names': [],
+ 'num_val_windows': 2,
+ 'prediction_length': 1,
+ 'quantile_levels': [0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 0.95],
+ 'random_seed': 123,
+ 'refit_every_n_windows': 1,
+ 'refit_full': False,
+ 'skip_model_selection': False,
+ 'target': 'crp',
+ 'time_limit': 600,
+ 'verbosity': 3}
+
+{'enable_ensemble': True,
+ 'eval_metric': MAE,
+ 'freq': 'D',
+ 'hyperparameters': {'AverageModel': {}},
+ 'known_covariates_names': [],
+ 'num_val_windows': 2,
+ 'prediction_length': 1,
+ 'quantile_levels': [0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 0.95],
+ 'random_seed': 123,
+ 'refit_every_n_windows': 1,
+ 'refit_full': False,
+ 'skip_model_selection': False,
+ 'target': 'crp',
+ 'time_limit': 600,
+ 'verbosity': 3}
+
+Provided train_data has 2151 rows, 398 time series. Median time series length is 6 (min=4, max=6). 
+Provided train_data has 2151 rows, 398 time series. Median time series length is 6 (min=4, max=6). 
+Time series in train_data are too short for chosen num_val_windows=2. Reducing num_val_windows to 1.
+Time series in train_data are too short for chosen num_val_windows=2. Reducing num_val_windows to 1.
+	Removing 146 short time series from train_data. Only series with length >= 6 will be used for training.
+	Removing 146 short time series from train_data. Only series with length >= 6 will be used for training.
+	After filtering, train_data has 1512 rows, 252 time series. Median time series length is 6 (min=6, max=6). 
+	After filtering, train_data has 1512 rows, 252 time series. Median time series length is 6 (min=6, max=6). 
+
+Provided data contains following columns:
+
+Provided data contains following columns:
+	target: 'crp'
+	target: 'crp'
+
+AutoGluon will gauge predictive performance using evaluation metric: 'MAE'
+
+AutoGluon will gauge predictive performance using evaluation metric: 'MAE'
+	This metric's sign has been flipped to adhere to being higher_is_better. The metric score can be multiplied by -1 to get the metric value.
+	This metric's sign has been flipped to adhere to being higher_is_better. The metric score can be multiplied by -1 to get the metric value.
+===================================================
+===================================================
+
+Starting training. Start time is 2024-08-10 20:39:12
+
+Starting training. Start time is 2024-08-10 20:39:12
+Models that will be trained: ['Average']
+Models that will be trained: ['Average']
+Training timeseries model Average. Training for up to 599.8s of the 599.8s of remaining time.
+Training timeseries model Average. Training for up to 599.8s of the 599.8s of remaining time.
+	-8.4056       = Validation score (-MAE)
+	-8.4056       = Validation score (-MAE)
+	0.02    s     = Training runtime
+	0.02    s     = Training runtime
+	2.04    s     = Validation (prediction) runtime
+	2.04    s     = Validation (prediction) runtime
+Not fitting ensemble as only 1 model was trained.
+Not fitting ensemble as only 1 model was trained.
+Training complete. Models trained: ['Average']
+Training complete. Models trained: ['Average']
+Total runtime: 2.18 s
+Total runtime: 2.18 s
+Best model: Average
+Best model: Average
+Best model score: -8.4056
+Best model score: -8.4056
+Beginning AutoGluon training... Time limit = 600s
+AutoGluon will save models to 'autogluon'
+=================== System Info ===================
+AutoGluon Version:  1.1.1
+Python Version:     3.8.10
+Operating System:   Linux
+Platform Machine:   x86_64
+Platform Version:   #202309061752 SMP Wed Sep 6 22:35:16 UTC 2023
+CPU Count:          128
+GPU Count:          1
+Memory Avail:       978.97 GB / 1007.33 GB (97.2%)
+Disk Space Avail:   13.16 GB / 29.36 GB (44.8%)
+===================================================
+Setting presets to: best_quality
+
+Fitting with arguments:
+{'enable_ensemble': True,
+ 'eval_metric': MAE,
+ 'freq': 'D',
+ 'hyperparameters': {'NaiveModel': {}},
+ 'known_covariates_names': [],
+ 'num_val_windows': 2,
+ 'prediction_length': 1,
+ 'quantile_levels': [0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 0.95],
+ 'random_seed': 123,
+ 'refit_every_n_windows': 1,
+ 'refit_full': False,
+ 'skip_model_selection': False,
+ 'target': 'crp',
+ 'time_limit': 600,
+ 'verbosity': 3}
+
+Provided train_data has 2151 rows, 398 time series. Median time series length is 6 (min=4, max=6). 
+Time series in train_data are too short for chosen num_val_windows=2. Reducing num_val_windows to 1.
+	Removing 146 short time series from train_data. Only series with length >= 6 will be used for training.
+	After filtering, train_data has 1512 rows, 252 time series. Median time series length is 6 (min=6, max=6). 
+
+Provided data contains following columns:
+	target: 'crp'
+
+AutoGluon will gauge predictive performance using evaluation metric: 'MAE'
+	This metric's sign has been flipped to adhere to being higher_is_better. The metric score can be multiplied by -1 to get the metric value.
+===================================================
+
+Starting training. Start time is 2024-08-10 20:39:57
+Models that will be trained: ['Naive']
+Training timeseries model Naive. Training for up to 599.8s of the 599.8s of remaining time.
+	-3.9659       = Validation score (-MAE)
+	0.02    s     = Training runtime
+	3.26    s     = Validation (prediction) runtime
+Not fitting ensemble as only 1 model was trained.
+Training complete. Models trained: ['Naive']
+Total runtime: 3.41 s
+Best model: Naive
+Best model score: -3.9659
+Beginning AutoGluon training... Time limit = 600s
+AutoGluon will save models to 'autogluon'
+=================== System Info ===================
+AutoGluon Version:  1.1.1
+Python Version:     3.8.10
+Operating System:   Linux
+Platform Machine:   x86_64
+Platform Version:   #202309061752 SMP Wed Sep 6 22:35:16 UTC 2023
+CPU Count:          128
+GPU Count:          1
+Memory Avail:       984.45 GB / 1007.33 GB (97.7%)
+Disk Space Avail:   13.16 GB / 29.36 GB (44.8%)
+===================================================
+Setting presets to: best_quality
+
+Fitting with arguments:
+{'enable_ensemble': True,
+ 'eval_metric': MAE,
+ 'freq': 'D',
+ 'hyperparameters': {'DLinearModel': {},
+                     'DeepAR': {},
+                     'PatchTSTModel': {},
+                     'TemporalFusionTransformerModel': {},
+                     'TiDE': {}},
+ 'known_covariates_names': [],
+ 'num_val_windows': 2,
+ 'prediction_length': 1,
+ 'quantile_levels': [0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 0.95],
+ 'random_seed': 123,
+ 'refit_every_n_windows': 1,
+ 'refit_full': False,
+ 'skip_model_selection': False,
+ 'target': 'crp',
+ 'time_limit': 600,
+ 'verbosity': 3}
+
+Provided train_data has 2151 rows, 398 time series. Median time series length is 6 (min=4, max=6). 
+Time series in train_data are too short for chosen num_val_windows=2. Reducing num_val_windows to 1.
+	Removing 146 short time series from train_data. Only series with length >= 6 will be used for training.
+	After filtering, train_data has 1512 rows, 252 time series. Median time series length is 6 (min=6, max=6). 
+
+Provided data contains following columns:
+	target: 'crp'
+
+AutoGluon will gauge predictive performance using evaluation metric: 'MAE'
+	This metric's sign has been flipped to adhere to being higher_is_better. The metric score can be multiplied by -1 to get the metric value.
+===================================================
+
+Starting training. Start time is 2024-08-10 20:45:54
+Models that will be trained: ['TemporalFusionTransformer', 'DeepAR', 'TiDE', 'PatchTST', 'DLinear']
+Training timeseries model TemporalFusionTransformer. Training for up to 100.0s of the 599.8s of remaining time.
+	-4.2614       = Validation score (-MAE)
+	87.68   s     = Training runtime
+	0.22    s     = Validation (prediction) runtime
+Training timeseries model DeepAR. Training for up to 102.3s of the 511.7s of remaining time.
+	-4.7400       = Validation score (-MAE)
+	54.39   s     = Training runtime
+	0.22    s     = Validation (prediction) runtime
+Training timeseries model TiDE. Training for up to 114.2s of the 457.0s of remaining time.
+	-4.2762       = Validation score (-MAE)
+	69.94   s     = Training runtime
+	0.32    s     = Validation (prediction) runtime
+Training timeseries model PatchTST. Training for up to 128.9s of the 386.6s of remaining time.
+	-4.0006       = Validation score (-MAE)
+	32.57   s     = Training runtime
+	0.15    s     = Validation (prediction) runtime
+Training timeseries model DLinear. Training for up to 176.8s of the 353.7s of remaining time.
+	-4.2573       = Validation score (-MAE)
+	25.36   s     = Training runtime
+	0.16    s     = Validation (prediction) runtime
+Fitting simple weighted ensemble.
+	Ensemble weights: {'DLinear': 0.23, 'PatchTST': 0.57, 'TemporalFusionTransformer': 0.02, 'TiDE': 0.17}
+	-3.8421       = Validation score (-MAE)
+	0.58    s     = Training runtime
+	0.85    s     = Validation (prediction) runtime
+Training complete. Models trained: ['TemporalFusionTransformer', 'DeepAR', 'TiDE', 'PatchTST', 'DLinear', 'WeightedEnsemble']
+Total runtime: 272.50 s
+Best model: WeightedEnsemble
+Best model score: -3.8421
