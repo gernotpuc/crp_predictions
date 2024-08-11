@@ -1,0 +1,20 @@
+model_configurations:
+  #data_path: "./data/data_crp.csv"
+  start_prediction: "24h"
+  restrict_station: false
+  station: null
+  value_to_predict: "crp"
+  resample_rate: "D"
+  prediction_length: 1
+  max_train_length: 7
+  min_train_length: 4
+  min_ts_length: 5
+  metric: "MAE"
+  imputation: "forward_fill"
+  persistence_use_case: false
+  persistence_time_lag: "time_lag_1"
+  min_value: 0
+  padding: true
+  covariates: false
+  covariates_list: []
+  model_library: "darts"
