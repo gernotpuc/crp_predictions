@@ -11,12 +11,12 @@ To use the notebook with you own data, please read the section on **Data require
 - Clone the repositpory to your local machine
 - Adapt the paths to your input files in the Jupyter-Notebook **crp_forecasts** (see Step 0 in the Notebook)
 - Install libraries based on  **requirements.txt**
-- Choose a trained model from the list of models CRP forecasts should be based on. (see Step 2)
+- Choose a trained model from the list of models CRP forecasts should be based on (see Step 2 in the Notebook)
 - Execute the Jupyter-Notebook **crp_forecasts**
 - It will produce the following **outputs**:
-  - Performance metrics as print (Step 3)
-  - Dataframes with next day CRP-predictions and actual values (Step 3)
-  - Plots of forecasts of specific patients (Step 4)
+  - Performance metrics as print (see Step 3 in the Notebook)
+  - Dataframes with next day CRP-predictions and actual values (see Step 3 in the Notebook)
+  - Plots of forecasts of specific patients (see Step 4 in the Notebook)
 
 ## Introduction
 Internationally, and also in Germany, the prevalence of multi-resistant pathogens, which do not respond to antibiotics or only respond to them to a limited extent, is increasing. The main cause is the incorrect prescription and application of antibiotics, in particular the unnecessary and excessively long treatment with broad-spectrum antibiotics. 
