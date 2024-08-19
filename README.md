@@ -7,9 +7,9 @@ To use the notebook with you own data, please read the section on **Data require
 
 ## Instructions
 - Extract patient cohort (see section **Cohort definition**)
-- Prepare CSV-files as model input (see section **Data requirements**)
+- Prepare CSV-files as model **input** (see section **Data requirements** for descriptions and the exemplary syntax of input files)
 - Clone the repositpory to your local machine
-- Adapt the paths to yout input files in the Jupyter-Notebook **crp_forecasts** (see Step 0 in the Notebook)
+- Adapt the paths to your input files in the Jupyter-Notebook **crp_forecasts** (see Step 0 in the Notebook)
 - Install libraries based on  **requirements.txt**
 - Choose a trained model from the list of models CRP forecasts should be based on. (see Step 2)
 - Execute the Jupyter-Notebook **crp_forecasts**
