@@ -16,7 +16,7 @@ To use the notebook with you own data, please read the section on **Data require
 - It will produce the following **outputs**:
   - Performance metrics as print (see Step 3 in the Notebook)
   - Dataframes with next day CRP-predictions and actual values (see Step 3 in the Notebook)
-  - Plots of forecasts of specific patients (see Step 4 in the Notebook)
+  - Plots of forecasts for specific patients (see Step 4 in the Notebook)
 
 ## Introduction
 Internationally, and also in Germany, the prevalence of multi-resistant pathogens, which do not respond to antibiotics or only respond to them to a limited extent, is increasing. The main cause is the incorrect prescription and application of antibiotics, in particular the unnecessary and excessively long treatment with broad-spectrum antibiotics. 
