@@ -23,6 +23,10 @@ fhir_recorded_date_start:
 fhir_recorded_date_end: 
 - 'le2023-06'
 
+# Adapt Snomed-CT codes indicating iv route of antibiotics
+intravenous_route_codes:
+  - '447202000'
+  - '47625008'
 
 # Activate/de-activate sorting parameter for all FHIR queries
 fhir_sort:
