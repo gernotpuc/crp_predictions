@@ -303,6 +303,49 @@ def fetch_fhir_dataframe(
 # Data Processing Functions
 # -------------------------------------------------------------------------
 
+def filter_intravenous_administrations(
+    admin_df: pd.DataFrame,
+    intravenous_codes: list[str],
+    logger: logging.Logger,
+) -> pd.DataFrame:
+    """
+    Keep only MedicationAdministration rows where ANY column contains
+    one of the configured intravenous route codes.
+    """
+    if admin_df.empty:
+        return admin_df
+
+    if not intravenous_codes:
+        logger.warning(
+            "No intravenous_route_codes configured. Skipping intravenous filter."
+        )
+        return admin_df
+
+    logger.info(
+        "Filtering MedicationAdministration rows for intravenous codes: %s",
+        intravenous_codes,
+    )
+
+    pattern = "|".join(map(str, intravenous_codes))
+
+    admin_str = admin_df.astype(str)
+
+    mask = admin_str.apply(
+        lambda row: row.str.contains(pattern, regex=True, na=False).any(),
+        axis=1,
+    )
+
+    before = len(admin_df)
+    filtered = admin_df[mask].copy()
+
+    logger.info(
+        "Intravenous MedicationAdministration filter: rows %d → %d",
+        before,
+        len(filtered),
+    )
+
+    return filtered
+
 
 def compute_patient_age(
     encounters_df: pd.DataFrame,
@@ -545,9 +588,11 @@ def main() -> int:
         fhir_sort = get_fhir_sort(config)
         fhir_recorded_date_start = get_fhir_recorded_date_start(config)
         fhir_recorded_date_end = get_fhir_recorded_date_end(config)
+        intravenous_route_codes = get_intravenous_route_codes(config)
         logger.info("FHIR sorting enabled (fhir_sort): %s", fhir_sort)
         logger.info("FHIR recorded-date start parameter: %s", fhir_recorded_date_start)
         logger.info("FHIR recorded-date end: %s", fhir_recorded_date_end)
+        logger.info("Intravenous route codes: %s", intravenous_route_codes)
 
         search = init_authentication(config, logger, env_file=args.env_file)
         fhir_count = str(config.get("fhir_count", 100))
@@ -734,11 +779,25 @@ def main() -> int:
         admin_df = admin_df[
             admin_df["medicationReference_reference"].isin(meds_df["medication_reference"])
         ]
-        logger.info("FHIR Query #4: filtered administrations %d → %d", before, len(admin_df))
+        logger.info("FHIR Query #4: filtered administrations by ATC %d → %d", before, len(admin_df))
 
         if admin_df.empty:
             logger.warning("No MedicationAdministration rows after ATC filtering. Stopping pipeline early.")
             return 0
+        
+        admin_df = filter_intravenous_administrations(
+            admin_df=admin_df,
+            intravenous_codes=intravenous_route_codes,
+            logger=logger,
+        )
+      
+        if admin_df.empty:
+            logger.warning(
+              "No intravenous MedicationAdministration rows remain after filtering. "
+              "Stopping pipeline early."
+              )
+            return 0
+
 
         # -----------------------------------------------------------------
         # Patient Filtering
