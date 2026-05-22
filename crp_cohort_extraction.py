@@ -303,6 +303,22 @@ def fetch_fhir_dataframe(
 # Data Processing Functions
 # -------------------------------------------------------------------------
 
+def get_intravenous_route_codes(config: Dict) -> list[str]:
+    """
+    Read intravenous route codes from config_crp.yaml.
+
+    Example:
+      intravenous_route_codes:
+        - "447202000"
+        - "47625008"
+    """
+    val = config.get("intravenous_route_codes", ["447202000", "47625008"])
+
+    if isinstance(val, list):
+        return [str(v) for v in val]
+
+    return [str(val)]
+
 def filter_intravenous_administrations(
     admin_df: pd.DataFrame,
     intravenous_codes: list[str],
