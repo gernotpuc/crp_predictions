@@ -813,6 +813,47 @@ def main() -> int:
               "Stopping pipeline early."
               )
             return 0
+        # Keep only encounters that have an IV MedicationAdministration
+        if "context_reference" in admin_df.columns:
+            iv_encounter_ids = (
+                admin_df["context_reference"]
+                .astype(str)
+                .str.replace("Encounter/", "", regex=False)
+                .dropna()
+                .unique()
+            )
+        elif "context" in admin_df.columns:
+            iv_encounter_ids = (
+                admin_df["context"]
+                .astype(str)
+                .str.replace("Encounter/", "", regex=False)
+                .dropna()
+                .unique()
+            )
+        else:
+            raise KeyError(
+                "admin_df has neither 'context_reference' nor 'context' column; "
+                f"columns are: {list(admin_df.columns)}"
+            )
+        
+        before = len(encounters_df)
+        
+        encounters_df = encounters_df[
+            encounters_df["id"].astype(str).isin(iv_encounter_ids)
+        ].copy()
+        
+        logger.info(
+            "Filtered encounters to IV MedicationAdministration cohort: rows %d → %d",
+            before,
+            len(encounters_df),
+        )
+        
+        if encounters_df.empty:
+            logger.warning(
+                "No encounters remain after filtering to IV MedicationAdministration cohort. "
+                "Stopping pipeline early."
+            )
+            return 0
 
 
         # -----------------------------------------------------------------
